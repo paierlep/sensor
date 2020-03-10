@@ -1,0 +1,94 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+/*************************************************
+ * Config.h
+ *
+ * defines multiple constant values for the sensor
+ * please copy that file to Config.h
+ * and modify it if necessary!
+ ************************************************/
+
+/**
+ * the name of the sensor within the network
+ *
+ * this has to be unique for every sensor
+ * connected to the server
+ */
+#define NAME "sensor-1"
+
+/**
+ * the ip address of the sensor
+ *
+ * do not use . for the seperation of the octets
+ * but , as they are directly ingested as parameters
+ * in the Esp8266 IPAddress class
+ * (see: https://github.com/esp8266/Arduino/blob/master/cores/esp8266/IPAddress.h)
+ */
+#define IP 192,168,0,100
+
+/**
+ * the network's gateway
+ *
+ * do not use . for the seperation of the octets
+ * but , as they are directly ingested as parameters
+ * in the Esp8266 IPAddress class
+ * (see: https://github.com/esp8266/Arduino/blob/master/cores/esp8266/IPAddress.h)
+ */
+#define GATEWAY 192,168,0,1
+
+/**
+ * the network's subnet
+ *
+ * do not use . for the seperation of the octets
+ * but , as they are directly ingested as parameters
+ * in the Esp8266 IPAddress class
+ * (see: https://github.com/esp8266/Arduino/blob/master/cores/esp8266/IPAddress.h)
+ */
+#define SUBNET 255,255,255,0
+
+/**
+ * the SSID of the wifi network
+ */
+#define WIFI_SSID "ThisIsMySuperWifi"
+
+/**
+ * the password for the wifi
+ */
+#define WIFI_PASS "ThisIsMySuperWifiPassword"
+
+/**
+ * the full url of the server
+ *
+ * currently only http connections are possible
+ * as ESP8266HttpClient is used directly
+ */
+#define SERVER_URL "http://example.com/api"
+
+/**
+ * the interval in minutes for taking measurements
+ */
+#define INTERVAL 5
+
+/**
+ * the baud rate for the serial communication
+ *
+ * serial connection is used for some debug output
+ */
+#define BAUD 115200
+
+/**
+ * defines the timeout in usec to wait for checking the wifi connection status
+ */
+#define WIFI_CONNECTION_TIMEOUT 500
+
+/**
+ * defines the brzo_i2c clock_stretch timeout in usec
+ */
+#define I2C_ACK_TIMEOUT 2000
+
+/**
+ * defines the timout in usec after a failed connection to the bme280 sensor
+ */
+#define SENSOR_CONNECTION_TIMEOUT 500
+
+#endif
